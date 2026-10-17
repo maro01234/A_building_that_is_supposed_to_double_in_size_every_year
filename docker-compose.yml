@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  web:
+    # Intel Mac(x86_64)で安定して動く公式のPHP+Apacheイメージを指定
+    image: php:8.3-apache
+    container_name: my-php-server
+    ports:
+      - "8080:80"
+    volumes:
+      # 「現在のMacのフォルダー」を「DockerのWeb公開フォルダー」に同期
+      - .:/var/www/html
